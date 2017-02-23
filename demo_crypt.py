@@ -75,7 +75,8 @@ mydecrypt
 #Reference http://crypto.stackexchange.com/questions/12214/can-you-explain-weak-keys-for-des
 from Crypto.Cipher import DES
 from Crypto import Random
-iv = Random.new().read(DES.block_size)
+#IV not needed for ECB mode
+#iv = Random.new().read(DES.block_size)
 plaintext = b'ICS355 DES Test!' #Multiple of 16
 desmode=DES.MODE_ECB #[DES.MODE_CBC, DES.MODE_CFB, DES.MODE_ECB, DES.MODE_OFB, DES.MODE_OPENPGP]: #DES.MODE_CTR requires a counter
 
@@ -88,13 +89,13 @@ SemiWeakKeys=[["01FE 01FE 01FE 01FE", "FE01 FE01 FE01 FE01"],
 for key1,key2 in SemiWeakKeys:
     skey=key1
     key= str(bytearray.fromhex(skey))
-    cipher = DES.new(key, desmode, iv)
+    cipher = DES.new(key, desmode)
     #msg = iv + cipher.encrypt(plaintext)
     ctext = cipher.encrypt(plaintext)
     print "Key1:",ctext
     skey=key2
     key= str(bytearray.fromhex(skey))
-    cipher = DES.new(key, desmode, iv)
+    cipher = DES.new(key, desmode)
     msg= cipher.encrypt(ctext)
     print "Key2:",msg
 
@@ -106,7 +107,7 @@ for key1,key2 in SemiWeakKeys:
 #Reference: https://pythonhosted.org/python-gnupg/
 #Create a file called nohup.out. Put any text any it.
 #run gpg --clearsign nohup.out
-python
+# run python python
 import gnupg
 dir(gnupg)
 gpg = gnupg.GPG(gnupghome='~')
