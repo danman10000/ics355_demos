@@ -7,13 +7,6 @@
 ###############################################################
 ###############################################################
 ###############################################################
-#MD5
-import hashlib
-print hashlib.md5("whatever your string is").hexdigest()
-
-###############################################################
-###############################################################
-###############################################################
 
 #Shows the number of key combinations in a readable format
 key_size_in_bits=112
@@ -27,16 +20,33 @@ key_size_in_bits=112
 #http://www.umich.edu/~x509/ssleay/des-weak.html
 from Crypto.Cipher import DES
 from Crypto import Random
+#Set the Initialization Vector (IV)
 iv = Random.new().read(DES.block_size)
+#Set the plaintext to be encrypted. It must be a multiple of 16
 plaintext = b'ICS355 DES Test!' #Multiple of 16
-
+#Set the key. It must be 8 bytes
 skey="01fe01fe01fe01fe" #8 bytes
+#The library requires a string byte array
 key= str(bytearray.fromhex(skey))
+#Create an instance of the cipher
 cipher = DES.new(key, DES.MODE_OFB, iv)
-#msg = iv + cipher.encrypt(plaintext)
-msg = cipher.encrypt(plaintext)
+#Encrypt the message. You all need to share the IV. You can append this to the message
+msg = iv + cipher.encrypt(plaintext)
+#msg = cipher.encrypt(plaintext)
+#Print the encrypted message. This is what would be sent.
 msg
+#Get the IV
+iv =msg[:DES.block_size]
+#Get the encrypted message
+encryptedmsg=msg[DES.block_size:]
+#Create a new instance of the encryption library on the remote box
+cipher = DES.new(key, DES.MODE_OFB, iv)
+#Decrypt the message
+mydecrypt= cipher.decrypt(encryptedmsg)
+#Decypted message
+mydecrypt
 
+#DES Example 2
 skey="ffffffffffffffff"
 key= str(bytearray.fromhex(skey))
 cipher = DES.new(key, DES.MODE_OFB, iv)
@@ -46,17 +56,8 @@ msg
 mydecrypt= cipher.decrypt(msg)
 mydecrypt
 
+#DES Example 3
 skey="0000000000000000"
-key= str(bytearray.fromhex(skey))
-cipher = DES.new(key, DES.MODE_OFB, iv)
-#msg = iv + cipher.encrypt(plaintext)
-msg = cipher.encrypt(plaintext)
-msg
-mydecrypt= cipher.decrypt(msg)
-mydecrypt
-
-
-skey="01fe01fe01fe01fe"
 key= str(bytearray.fromhex(skey))
 cipher = DES.new(key, DES.MODE_OFB, iv)
 #msg = iv + cipher.encrypt(plaintext)
@@ -96,3 +97,36 @@ for key1,key2 in SemiWeakKeys:
     cipher = DES.new(key, desmode, iv)
     msg= cipher.encrypt(ctext)
     print "Key2:",msg
+
+
+###############################################################
+###############################################################
+###############################################################
+
+#Reference: https://pythonhosted.org/python-gnupg/
+#Create a file called nohup.out. Put any text any it.
+#run gpg --clearsign nohup.out
+python
+import gnupg
+dir(gnupg)
+gpg = gnupg.GPG(gnupghome='~')
+myfile=open("nohup.out","r")
+verified = gpg.verify_file(myfile,"nohup.out.asc")
+dir(verified)
+gpg = gnupg.GPG()
+verified = gpg.verify_file(open("nohup.out.asc","r"))
+verified.valid
+verified.fingerprint
+verified.pubkey_fingerprint
+verified.signature_id
+gpg = gnupg.GPG(verbose=True)
+verified = gpg.verify_file(open("nohup.out.asc","r"))
+verified.pubkey_fingerprint
+
+###############################################################
+###############################################################
+###############################################################
+
+#MD5
+import hashlib
+print hashlib.md5("whatever your string is").hexdigest()
