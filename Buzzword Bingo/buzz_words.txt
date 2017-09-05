@@ -1,0 +1,26 @@
+computer security /1e-15/
+authorized /1e-15/
+encryption /1e-15/
+attributes /1e-15/
+resources /1e-15/
+objects /1e-15/
+subjects /1e-15/
+privacy /1e-15/
+interactions /1e-15/
+framework /1e-15/
+network /1e-15/
+neutrality /1e-15/
+fairness /1e-15/
+lifecycle /1e-15/
+protection /1e-15/
+confidentiality /1e-15/
+integrity /1e-15/
+availability /1e-15/
+authenticity /1e-15/
+access control /1e-15/
+non-repudiation /1e-15/
+auditing /1e-15/
+restricted /1e-15/
+secret /1e-15/
+effects /1e-15/
+protocol /1e-15/
