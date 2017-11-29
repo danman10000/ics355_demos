@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>UH Login - University of Hawaiʻi</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="UH%20Login%20-%20University%20of%20Hawai%CA%BBi_files/cas.css"><link rel="icon" href="https://authn.hawaii.edu/cas/favicon.ico" type="image/x-icon"><script type="text/javascript" src="UH%20Login%20-%20University%20of%20Hawai%CA%BBi_files/jquery-3.js"></script>  	
+<script type="text/javascript" src="UH%20Login%20-%20University%20of%20Hawai%CA%BBi_files/jquery-ui.js"></script>  	
+<script type="text/javascript" src="UH%20Login%20-%20University%20of%20Hawai%CA%BBi_files/uhshowhide.js"></script>  	
+<script type="text/javascript" src="UH%20Login%20-%20University%20of%20Hawai%CA%BBi_files/bootstrap.js"></script>  	
+<script type="text/javascript" src="UH%20Login%20-%20University%20of%20Hawai%CA%BBi_files/jquery.js"></script>  	
+</head>
+<body id="cas" class="login">
+    <div id="container">
+        <span class="visuallyhidden">
+            <h1>UH Login - University of Hawai'i</h1>
+        </span>
+        <div id="content">
+
+        <div class="left"> 
+			
+		<div id="seal">
+			<span class="visuallyhidden">
+            <h2>University of Hawai'i System Login</h2>
+        </span>
+		</div>
+		<div id="help">
+			<p><a href="https://iam.its.hawaii.edu/access/am-forgot-password">Forgot Password?</a></p>
+		</div>				
+		</div>
+			
+		<div id="rightside">
+			<form method="post" id="login">    
+	<p id="errors" class="warning" role="alert" aria-atomic="true">
+        </p>
+    <div class="input-icons">
+        <span>
+                <input class="required textinput" placeholder="UH Username" id="username" size="14" autocomplete="off" autocapitalize="off" autocorrect="off" required="required" aria-required="true" autofocus="autofocus" name="username" type="text"><label for="username">
+					
+					<svg width=".9em" height=".9em" viewBox="0 0 64 64" class="svg-icon fa-user" role="presentation" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg">
+					<path d="M60.4,52.5c0,3.2-1,5.8-2.9,7.6c-2,1.9-4.6,2.8-7.8,2.8H14.4c-3.3,0-5.9-0.9-7.8-2.8s-2.9-4.4-2.9-7.6c0-1.4,0-2.8,0.1-4.2 C3.8,47,4,45.5,4.3,44c0.3-1.6,0.6-3,1.1-4.4c0.4-1.3,1-2.7,1.7-3.9c0.7-1.3,1.6-2.4,2.5-3.3c0.9-0.9,2.1-1.6,3.5-2.2 c1.4-0.5,2.9-0.8,4.5-0.8c0.2,0,0.8,0.3,1.7,0.9c0.9,0.6,1.9,1.2,3,1.9s2.6,1.4,4.4,1.9c1.8,0.6,3.6,0.9,5.4,0.9s3.6-0.3,5.4-0.9 c1.8-0.6,3.2-1.2,4.4-1.9s2.1-1.4,3-1.9c0.9-0.6,1.5-0.9,1.7-0.9c1.6,0,3.1,0.3,4.5,0.8c1.4,0.5,2.5,1.3,3.5,2.2 c0.9,0.9,1.8,2,2.5,3.3c0.7,1.3,1.3,2.6,1.7,3.9c0.4,1.3,0.8,2.8,1.1,4.4c0.3,1.6,0.5,3,0.6,4.4C60.4,49.7,60.4,51.1,60.4,52.5z M47.5,16.5c0,4.3-1.5,7.9-4.5,11S36.3,32,32,32s-7.9-1.5-11-4.5s-4.5-6.7-4.5-11S18,8.6,21,5.5S27.7,1,32,1s7.9,1.5,11,4.5 S47.5,12.2,47.5,16.5z"></path></svg>
+					
+					<span class="visuallyhidden">UH Username:</span>
+					
+				</label>
+				
+        </span>
+        <div id="end"></div>
+    </div>
+    <div class="input-icons">
+		<input class="required textinput" placeholder="UH Password" id="password" name="password" size="14" autocomplete="off" autocapitalize="off" autocorrect="off" required="required" aria-required="true" value="" type="password"><label for="password">
+			
+				<svg width=".9em" height=".9em" viewBox="0 0 64 64" class="svg-icon fa-lock" role="presentation" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg">
+				<path d="M20.7,29.2h22.5v-8.5c0-3.1-1.1-5.8-3.3-8c-2.2-2.2-4.9-3.3-8-3.3s-5.8,1.1-8,3.3s-3.3,4.9-3.3,8V29.2z M57.4,33.4v25.4 c0,1.2-0.4,2.2-1.2,3c-0.8,0.8-1.8,1.2-3,1.2H10.9c-1.2,0-2.2-0.4-3-1.2s-1.2-1.8-1.2-3V33.4c0-1.2,0.4-2.2,1.2-3 c0.8-0.8,1.8-1.2,3-1.2h1.4v-8.5c0-5.4,1.9-10,5.8-13.9S26.6,1,32,1s10,1.9,13.9,5.8s5.8,8.5,5.8,13.9v8.5h1.4c1.2,0,2.2,0.4,3,1.2 C57,31.2,57.4,32.2,57.4,33.4z"></path></svg>
+				
+				<span class="visuallyhidden">UH Password:</span>
+				
+			</label>
+        
+		<button type="button" alt="Show/Hide Password" id="eye" value="Show/Hide Password" class="button_eye">
+			<svg width="1em" height="1em" viewBox="0 0 64 64" class="svg-icon fa-eye" role="presentation" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg">
+			<path d="M58.6,32c-3.5-5.4-7.9-9.5-13.2-12.2c1.4,2.4,2.1,5,2.1,7.8c0,4.3-1.5,7.9-4.5,11c-3,3-6.7,4.5-11,4.5s-7.9-1.5-11-4.5 s-4.5-6.7-4.5-11c0-2.8,0.7-5.4,2.1-7.8C13.3,22.5,8.9,26.6,5.4,32c3.1,4.7,6.9,8.5,11.5,11.3s9.6,4.2,15,4.2s10.4-1.4,15-4.2 S55.5,36.7,58.6,32z M33.7,18.7c0-0.5-0.2-0.9-0.5-1.2c-0.3-0.3-0.7-0.5-1.2-0.5c-2.9,0-5.4,1-7.4,3.1s-3.1,4.5-3.1,7.4 c0,0.5,0.2,0.9,0.5,1.2s0.7,0.5,1.2,0.5c0.5,0,0.9-0.2,1.2-0.5s0.5-0.7,0.5-1.2c0-2,0.7-3.7,2.1-5.1c1.4-1.4,3.1-2.1,5.1-2.1 c0.5,0,0.9-0.2,1.2-0.5C33.5,19.6,33.7,19.2,33.7,18.7z M63,32c0,0.8-0.2,1.6-0.7,2.4c-3.2,5.3-7.6,9.6-13,12.7S38.1,51.9,32,51.9 s-11.8-1.6-17.3-4.8s-9.8-7.5-13-12.7C1.2,33.6,1,32.8,1,32c0-0.8,0.2-1.6,0.7-2.4c3.2-5.3,7.6-9.5,13-12.7s11.2-4.8,17.3-4.8 s11.8,1.6,17.3,4.8s9.8,7.5,13,12.7C62.8,30.4,63,31.2,63,32z"></path></svg>
+				<span class="visuallyhidden">Show/Hide Password</span>
+		</button>
+    </div>
+    <p id="block">
+        <input name="execution" value="705f1c3e-d4e9-49ff-aa03-2d0f72a6c3c3_ZXlKaGJHY2lPaUpJVXpVeE1pSjkuWW1kbGEwdE9VV2wwUjBWeFIzSlpPVTFIWTJoaFJXaFdTbEptYUVoS2NGUlNNVXBIVUVGR2VrcElSU3RIUWpOUVFtZFhWR2xYWVRaeGFWRTFlVWxUWld4bmVTOHJOblJwTTJJcmMxRnZTbU5JT0VaWlVEWklTWEZIVGxkWFlXWlBVVFJUUzFSMFNDOVlWR3h4VWxOS1pUVk9RMHhpTmxoSmIxbEplRWRXU1ZKaVpVRlVOeXREWW5SRlVsazFkVTFQUW5OUVExTTFTVUZEYldORmR6azJPRVp0YlhGSFlscFhSMkV5VDFoS1JHVjVTV042Y0cxUGJDczJjV2xOTUZaSGJYcENUekZJWlUxQlRGVjVhVmhLTTFSWk4yODBVbmh2TkZNM2VpdHRMMWhsVDFSVmEweEVUbUpUZVd4Q2FYVkRhbE5XUWxWNVducEtiblJXV2sxa01GZEtTMG92UjJabVdXUnliVlp1VkhkTWNIbDNRWGx5ZFhoM1ptaFVMM2xFTUVGWVpVSnZkM1JTT1doVU9UVXlORkZMVlZFd04yMTNXRTR3TW5WNlIwTTRVR2QwUlZveVNqUmhVVXRoZGpBdmJuRkdVM0pDUVRReWJFSTRVWFpGVGtWQmIyMVRORkkwVkVWT09YQXpSVk5QTlZKbk5rUnNUbkZXVjJrMmJrdEVTV3RSTkZKb1JpOTVUVmxhU0hCblZGUmtPRzgzWW0wNVJYUkRNVlZDV1VoRVowRjZUV2hVUm5kR2N6RkRhMUp1VXpFMk0wbFFSMWhPV1cxcFJHRkZNSEpZWjJOeloybEpUWGRoVkZwU1VWWk9WbFptZVRscVYwbEplSGtyVTBsU1ZIbHFLMkZoWTJKeU1ISlFhalZvUVRGR1RrTk9NRkpoWkU1MGRtUlliRlVyVUUxSWRuYzJOMDR2TkU4NGNVZHpSSGMzT1hSM1FtTTBjV3h6Umk4dlpXVjRUMEpsZGtwM1ZuZzRSbk5ZY0RONVREaG9UelJDUTI5alJXRmFTbHBrVmxOdWJGVm5XRzFsVDFsRlVrWlhhVkJOWkdrMlMwZFJZbFkzZURGWFNtWTJNbmxETld0b1REZDVjMGRLV2poUlUycG5hbkZTYlRSNVVHZDJZMjFGWWpORGJsQlZia015TUV4T1VtRnJiMk16VUdOaloycFpUalJvUkhoVU1GbFRORlV3VldVelZYQk5OMWN4Y2xSdmMxQkZPV05vVkM5MVIwWnhNamhYZUhacWFURjFPR1IyT0ZwNk1VNDVRa2d6UkU5cVMxQkVRbWRGU1doTmIwNTFRMkpKUjAxMmJHRjVja053TjJ0aVFXaFRVUzlUWVdFd1RrTTRPVXBNTW5VNVJFVXpLMk54VVVKaVZqZDJjUzl5TVZsTVIxUlZVR3RITjNCT1dtSk5jbFZKUzFCdWExUkdabWRqTVZKS016SlZOV0p1WnpoNFpub3pObUl3YTFkSVkyVkZNMUJRU1hGTFdYbHBWRUpPUVRoSFozSlZVelJyWkhnM1IwTkVNa2xwU214eU5qTnpSSFV4VTFaMFREQkthM3A1YTBKcGF6azVaSGg2Ymt4TFpqbHdRbkYwUzBSc2VIWkhNRkp5U1ROYU9YSjJVM05rTUhOM2NtODRSRlJEUVdremRURlpNR1ZqUlRnMGREQmFVVWxzUWxCeU5sTkphRGd4U0dGTWRFbDZjazFXVWxwNlpDdElTRXhxZFZKT0wwaFBTM014UVhNeU4yZzVUbXA2VlRkMmFrUkxjR3hYTWpoR1FWWmhVVkl5YkUxSVpVMXZSazVpTmtSa2JVWkhjakZPYlhKdlRFSXZUMkprVTJsM1ZFZzBRVGxaUmtkU1NVaHNXVTFNYldkaVNEVkZhM0JTTVdaUmN6RktPVEYxWm1wWmJ6TlBSMVpJVmxCTFUwdFVSakpsWTFKME1FRkxVREZ0UWxCTFpraGlUalI0YzBVMVNtVlZRaXRQSzNWSVNrRXlMMDh3UkRSYVltdzRPRWRtWVN0WWVGTm9aV3MxVUhSSVZ6VTFkR041VEZCV1RYUTJTMFp6UlVSU1NFbFJNalpuYUhoS2NrNXRiM1pyUVVsb1QyWlFZM2RsT1VoRGEyRnFWVTlUTUUxcGFYZHBWbVZ5Y1dJdlQyTXlPVlppUVRkb1JIUllWWEo1TDJsVGJEbFpNM2hUY1U5RllUazJlakI1Y1RRNWIzb3ZNV3cwTkVKWWEwVXdhR2RZVlN0b1JEaDFSemxMYlRWQ1UxUjNaVVI0TW1sbVRVSnZZVzV1WnpOT1dITlJWa3hJUVVJMldTOUJiR2Q1TUhCWk1WZDRha2x2T0ZCb1NFVnVSM0JpWldWTWNXcE5VMXB5U2t3dlIyRmpPSGRNT1VwSFRXVjJhbWhyT1d0NFVVMW1VbHB0TVRoemJHaGpZbmgyZW5veGJXcEhSRXRNUTNSQk1YUmlNV05xZEVVcmRqSlBOM28xTDFKaWFqRnJPV3d5T1ZWeGREaEJOMGwwVFVkNmNUSldORmcwV1RoS1Exa3ZWbE14WTFFd1dqQkVNU3RNTXpoWVdGbEJaRnBzVDJOeFJrVjZVbWR1VlRCRmJVUXhRakpoTUdKck9WQmhkazg0UjJKbFdHRXdMMlZqWkdrNU5tRXZObVZsYlUxdVpsSktWM0phV0U5SmJXODFWa2Q2WlN0cGIzUXljMDByY0d0Rk5ETlZPR0pPVVVaV1IwZDRaVXBIVTNkbFpUaHNkSFoxTTFZeWEzUlJSemhJTUcxbFpqUkZaVXM0ZEhSSlZqbElNVkpQYVc4dlRYWTFiVVoyUzNoSVNXSmFjazB4WVV0NFdXUTJOekZsYVV0bWFtcHNaV2xLYTNobFRrMW1ObFpVVWtKRlNVRkJaRFpLYUZoNUwwWkpPWHBtWldoelQwVllhbkV3ZDNwVlRTOXRjVTFSVkVwalZqQktjMnREWjNwS2JVOWtZbGszTUdneFZXbzNXRUZTYkhGdmMyTlFWMjU1Y0hsUVFuTktjME5pVlhoYVVGcElURzFhU0ZWYU1tUkJWM0JEVW05dWVFWnFkbWxXZG1GQ1dHeENhMmQzZGt4VVF6WjRSMjV4TTA4ME4xcHlabVp0VmxkUmIxQnpSV05vUzJsS1ZEYzFVRTlqTDBwSGJHZEhRVVo1TXpKVGNuWm1MMjUxTVhKcFluQTJaVlo1UjJ4aWRVVjRVVVJJVTBoU1NtSjBUVGg0ZEhKNWNtTjFTVTFoU0RKaGFVaGtkakp0VVdSaGFVRjVkVWRYUjNwaFJsWXdLMU5CU1VaeVdUQldVVFp4TkhZM1JFdFhVMGw1Tm5keFZYVXJURFJLYlhwMk56WndURU5WU0VOcFJFeHhSVXR1TjA5eFl6SklOV0ZOUW1KWk5qSkRTUzlWYVhobksydEpaazlMV1hCNVdXdFZWVlF6UWtOemIzQlpUWEZ5TkZoVmRtVkpOMU5vUzFobGRqRlNlQ3RwZFZKaWFYaEZWazRyYXl0TldFNWlVWE5EVjNWeFpVWjNSWFpTUlZaSUwwcFFjSGR4VkRSdVNVOXhOaXRzYTNWRGVHODBlV3hIZG5OS2EySXdZbTlaV0RacVpFTjZjaXR6UkcxU2MyUkRRakl3WkVoMlZYQmlZM1ZvYVZkQlNEbFBjbFpLYm5OaVVISjRNRFp0YTFKQlQybFdZVkIyWVdkMVQyVnZZazFPUnpNclMxY3ZiMmhwUlhGM1pWQmxja2xYU25CTWJpOWtkRzVuV0ZobGRVMDFSRnBaVGpSb1NqSkNSMFJYWW1KbldtdE9aalZaYW5GTmQyeEJjVXA2U25selRrNUZPRzlEVVRSVGEwRkNZbGRQWTNSNE5EVnhaSFEzVm14VFdGaEdSMVI0ZWxKMlRGWnlkVmh4T1VwMVFUSlhTVE5LYkVsclRUVktiRGxFTW01TVpqQmpORmRXU0hnMVJtRnJSV1JTUmpkMlZXNVFkMUV2WWtrdlZWUnBVSGRUYVZOcVZraDVXV05CZG1OYU5DdEtjbU5FTlhkWlZuVTRNekJpUVN0c1lsaFVWazVPTkdaa1EyazNkMjFaUTJreGVXMUNWRmwzVGk5RVpWRXJhMFE0VDNKSFVHZHhTSFJtVG1sblVrRTJZbGxwYTNjMGFHVkNSRTVpVEU0eVdFVnRSRmxIZWtodE5UZERiazlOUzBwTlkzVkdNSFoxUm1SbU1YUjFhV3hIUzJ0SFl6SnFiVEJVVEVOdmRFTlBlSGN4TjI4clpYTndaemxyZVU5aVlrTnJZMmRKVGxrek9EZFFaVFJtZG5sc2J6WnFXR1UzVjNOdU0xVTBjRmhQTDBkVVdDdEphelZ0UkdOVGRITjVSbVZIU2t4TVExZGljakJ2WVU5cGRYcFhTVmRUZEcxdFJuWnBTVlZuTDJocWJrTTBiR3RIZG5WV01Hc3dWSGRyVTI1T2JrcDBMM2MzU0hwRVduQnNSMko2VWxCWGVYQlhNa0p3VUNzcmREbGlTbFk1VFdKVVdWbG5UVFpZWTBSV2NXdGFUWFpJTDFWSFVEbG1hR1o0YUdGR1JXaHBkVVp3SzJWaU9EZEtRV1owWXpodk0ySkRibWR0VFZSblREQkhheXRLUkVWdVZEVmxUbm92VVdWMVVrUXZTVTR2UlZwV0swUnNVWFI2TVRacmFVdE5NVmhpUWl0bVpXZHpiRFJTVW1NdlkxSTRVelI0V0RoVmIxRmhNVkk0VFRJMFBRLndBRmYwZjlBekg2ZkxmR19jc21ERHBUbmJSVGpZUEY2cG1qUndWS2lGdHc5UVRlMVh2SmxOc2w1ZzhwNWN0aWFCOXZnbFE0MEJSTWNnQzFUNU1adWl3" type="hidden"><input name="_eventId" value="submit" type="hidden"><input class="btn btn-submit btn-block" id="submit" name="submit" value="Log in" type="submit"></p>
+</form>
+		</div>
+		
+</div>
+        <div id="footer">	
+    <p><H2>Hacked for ICS 355<H2></p>	
+</div>
+</div>
+
+
+</body></html>

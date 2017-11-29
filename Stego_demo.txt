@@ -1,0 +1,7 @@
+#Steg Demo
+#Choose any picture and name it picture.jpg
+#In a text file named secret.txt put something inside that should be kept secret
+steghide embed -cf picture.jpg -ef secret.txt -sf out.jpg
+steghide --info out.jpg
+steghide embed -cf ./Pictures/151137main_camera_crew_lg.bmp -ef secretfile.rtf -sf out.jpg
+steghide --info out.jpg 

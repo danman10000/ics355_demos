@@ -1,0 +1,49 @@
+# Example 1 GPG tool
+# Tutorial: http://www.thegeekstuff.com/2013/04/gnupg-digital-signatures/
+# Use some kind of demo file for this. In this demo it is a file called nohup.out
+gpg -verify
+gpg -verify nohup.out.sig nohup.out
+gpg --verify nohup.out.sig nohup.out
+sha1sum nohup.out
+xxd nohup.out.sig 
+xxd nohup.out.sig | grep b0
+xxd nohup.out.sig 
+gpg --decrypt nohup.out.sig
+gpg --list-packets < nohup.out.sig
+gpg --list-packets
+gpg --list-packets < nohup.out
+gpg --list-packets < nohup.out.sig
+
+gpg --clearsign nohup.out
+more nohup.out.asc 
+gpg --decrypt nohup.out.asc 
+gpgv 
+gpg --verify nohup.out.asc 
+gpg --list-packets --verbose < nohup.out.asc 
+gpg --list-packets --verbose --debug-level=5 < nohup.out.asc 
+gpg --list-packets --verbose --debug-level=10 < nohup.out.asc 
+pgpdump < nohup.out.asc 
+pgpdump -ilmp < nohup.out.asc 
+
+# Example 2 Using GPG in a Python program.
+# Reference: https://pythonhosted.org/python-gnupg/
+# Create a file called nohup.out. Put any text any it.
+# run gpg --clearsign nohup.out
+python
+import gnupg
+dir(gnupg)
+gpg = gnupg.GPG(gnupghome='~')
+myfile=open("nohup.out","r")
+verified = gpg.verify_file(myfile,"nohup.out.asc")
+dir(verified)
+gpg = gnupg.GPG()
+verified = gpg.verify_file(open("nohup.out.asc","r"))
+verified.valid
+verified.fingerprint
+verified.pubkey_fingerprint
+verified.signature_id
+gpg = gnupg.GPG(verbose=True)
+verified = gpg.verify_file(open("nohup.out.asc","r"))
+verified.pubkey_fingerprint
+
+
