@@ -1,5 +1,13 @@
 #Crypt - Entropy
 #Resource: https://random-notes-of-a-sysadmin.blogspot.com/2016/04/is-raspberry-pi-suitable-and-safe-to.html?m=1
+#Resource: https://blog.cloudflare.com/ensuring-randomness-with-linuxs-random-number-generator/
+#Resource: https://www.2uo.de/myths-about-urandom/
+#Resource: https://security.stackexchange.com/questions/47598/why-openssl-cant-use-dev-random-directly
+#Resource: https://lwn.net/Articles/261804/
+#Resource: https://security.stackexchange.com/questions/69423/add-a-file-as-entropy-source-for-dev-random
+#Resource: http://vk5tu.livejournal.com/43059.html
+
+
 
 #Assumption
 #Since /dev/urandom is a Hash chain seeded from /dev/random, then you could actually predict the next numbers, if you knew the seed. If you have enough control over the entropy pool, then from the output of /dev/urandom you might be able to guess this seed, which would enable you to predict all the next numbers from /dev/urandom, but only if you keep /dev/random exhausted, otherwise /dev/urandom will be reseeded.
