@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        .link {
+          fill: none;
+          stroke: #666;
+          stroke-width: 1.5px;
+        }
+
+        .node circle {
+         fill: #ccc;
+         stroke: #fff;
+         stroke-width: 1.5px;
+       }
+
+       .rnode circle {
+        fill: #AAA;
+        stroke: #ABF;
+        stroke-width: 1.5px;
+      }
+
+       text {
+         font: 10px sans-serif;
+         pointer-events: none;
+       }
+        </style>
+
+        <title>ICS 355 Web Of Trust</title>
+        <script type="text/javascript" src="d3/d3.v3.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+
+      <h1>ICS 355 Web of Trust</h1>
+        <script type="text/javascript">
+
+        var x;
+        var links;
+        var webData;
+
+        var el = document.createElement( 'html' );
+
+    
+
+     fetch('http://ics355cert.ics.hawaii.edu/pks/lookup?search=hawaii.edu&options=mr&op=vindex')
+            .then(function(response) {
+                return response.text();
+                }).then(function(text) {
+                   x = UIDGrabber(text.split('\n'));
+                    return x;
+                }).then(function(grabber){
+                    return FetchLinks(grabber);
+                });
+               
+
+
+        function UIDGrabber(arr){
+            var uids = new Array();
+            for(var i = 0; i < arr.length; i++){
+                if(arr[i].includes("uid")){
+                    uids.push(arr[i].slice(4,-13));
+                }
+            }
+            uids.push("Unknown KeyNotFound");
+            return uids;
+        }
+
+        function SelfLinkCreator(arr){
+            var selfs = new Array();
+            for(var i = 0; i < arr.length; i++){
+                selfs.push({source: arr[i], target: arr[i]});
+            }
+            return selfs;
+        }
+
+        function TrueLinkCreator(uids,links){
+            var selfCount = 0;
+            var bonds = new Array();
+
+            console.log(uids);
+            console.log(links);
+            /*var findOne = function (haystack, arr) {
+                return arr.some(function (v) {
+                    return haystack.indexOf(v) >= 0;
+                 });
+            };
+
+            console.log(findOne(uids,links));*/
+
+            for(var i = 0; i < links.length; i++){
+                if(links[i] == '[selfsig]' && i > 0){
+                    selfCount++;
+                }else{
+
+                if(links[i] === "[]" && !(links[i+1] === "[selfsig]")){
+                    bonds.push({ source: uids[selfCount], target: uids[uids.length-1]});
+                    //console.log(uids[selfCount] + ' & ' + uids[uids.length-1]);
+                }
+                else if(links[i] === "[]" && links[i+1] === "[selfsig]" || i == 0){
+                    console.log('lol');
+                }
+                else{
+                    //console.log(links[i]);
+                    bonds.push({ source: uids[selfCount], target: uids[uids.indexOf(links[i])]});
+                    //console.log(uids[selfCount] + ' & ' + uids[selfCount]);
+                }
+                }
+            }
+        return bonds;
+        }
+
+        function FetchLinks(uids){
+            fetch('http://ics355cert.ics.hawaii.edu/pks/lookup?search=hawaii.edu&fingerprint=on&op=vindex')
+            .then(function(response) {
+                         return response.text();
+                        })
+                         .then(function(body){
+                         var content = new Array();
+                         el.innerHTML = body;
+                         var elements = el.getElementsByTagName('a');
+                         for(var i = 0; i < elements.length; i++){
+                            if(elements[i].innerText.length != 8){
+                                content.push(elements[i].innerText);
+                                }
+                            }
+                            return content;
+                        }).then(function(final){
+                            Draw(uids,final);
+                        });
+        }
+            
+        function Draw(uids, molinks){
+
+         var sublink = SelfLinkCreator(uids);
+
+         links = sublink.concat(TrueLinkCreator(uids, molinks));
+
+        console.log(links);
+          var nodes = {};
+
+
+          // Compute the distinct nodes from the links.
+          links.forEach(function(link) {
+            link.source = nodes[link.source] || (nodes[link.source] = {name: link.source});
+            link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});
+          });
+
+
+          var width = 3000,
+              height = 3000;
+          
+          var force = d3.layout.force()
+              .nodes(d3.values(nodes))
+              .links(links)
+              .size([width, height])
+              .linkDistance(200)
+              .charge(-10000)
+              .on("tick", tick)
+              .start();
+          
+          var svg = d3.select("body").append("svg")
+              .attr("width", width)
+              .attr("height", height);
+          
+          // build the arrow.
+          svg.append("svg:defs").selectAll("marker")
+              .data(["end"])      // Different link/path types can be defined here
+            .enter().append("svg:marker")    // This section adds in the arrows
+              .attr("id", String)
+              .attr("viewBox", "0 -5 10 10")
+              .attr("refX", 15)
+              .attr("refY", -1.5)
+              .attr("markerWidth", 6)
+              .attr("markerHeight", 6)
+              .attr("orient", "auto")
+            .append("svg:path")
+              .attr("d", "M0,-5L10,0L0,5");
+          
+          // add the links and the arrows
+          var path = svg.append("svg:g").selectAll("path")
+              .data(force.links())
+            .enter().append("svg:path")
+          //    .attr("class", function(d) { return "link " + d.type; })
+              .attr("class", "link")
+              .attr("marker-end", "url(#end)");
+          
+          // define the nodes
+          var node = svg.selectAll(".node")
+              .data(force.nodes())
+            .enter().append("g")
+              .attr("class", "node")
+              .call(force.drag);
+          
+          // add the nodes
+          node.append("circle")
+              .attr("r", 5);
+          
+          // add the text 
+          node.append("text")
+              .attr("x", 12)
+              .attr("dy", ".35em")
+              .text(function(d) { return d.name; });
+          
+          // add the curvy lines
+          function tick() {
+              path.attr("d", function(d) {
+                  var dx = d.target.x - d.source.x,
+                      dy = d.target.y - d.source.y,
+                      dr = Math.sqrt(dx * dx + dy * dy);
+                  return "M" + 
+                      d.source.x + "," + 
+                      d.source.y + "A" + 
+                      dr + "," + dr + " 0 0,1 " + 
+                      d.target.x + "," + 
+                      d.target.y;
+              });
+          
+              node
+                  .attr("transform", function(d) { 
+                    return "translate(" + d.x + "," + d.y + ")"; });
+          }
+        
+          function mouseover() {
+            d3.select(this).select("circle").transition()
+                .duration(750)
+                .attr("r", 16);
+          }
+
+          function mouseout() {
+            d3.select(this).select("circle").transition()
+                .duration(750)
+                .attr("r", 8);
+          }
+        }
+
+        </script>
+
+    </body>
+</html>

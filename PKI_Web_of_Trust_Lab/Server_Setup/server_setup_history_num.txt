@@ -1,0 +1,447 @@
+    1  sudo apt-get update
+    2  sudo apt-get upgrade
+    3  reboot
+    4  nano /etc/ssh/sshd_config 
+    5  sudo nano /etc/ssh/sshd_config 
+    6  nano /etc/issue.net
+    7  sudo nano /etc/issue.net
+    8  systemctl restart sshd
+    9  exit
+   10  ls
+   11  cd .ssh
+   12  mkdir .ssh
+   13  exit
+   14  vi .ssh/authorized_keys
+   15  exit
+   16  cd .ssh
+   17  ls
+   18  ls -l
+   19  chmod 600 authorized_keys 
+   20  cd ..
+   21  chmod 600 .ssh/
+   22  ls -l
+   23  ls -la
+   24  exit
+   25  ping google.com
+   26  ifconfig
+   27  systemctl ssh restart
+   28  systemctl sshd status
+   29  sudo systemctl ssh
+   30  sudo service ssh restart
+   31  nano /etc/sshd/sshd_config
+   32  nano /etc/ssh/ssh_config 
+   33  nano /etc/ssh/sshd_config 
+   34  sudo service ssh status
+   35  sudo vi /etc/ssh/sshd_config 
+   36  sudo reboot
+   37  cd /var/log
+   38  ls
+   39  less auth.log
+   40  less dmesg 
+   41  less syslog
+   42  cd
+   43  cd .ssh/
+   44  ls -l
+   45  ls -la
+   46  chmod 700 .ssh/
+   47  cd .ssh/
+   48  ls
+   49  ls -l
+   50  more authorized_keys 
+   51  exit
+   52  cd /var/log
+   53  ls
+   54  man sshd
+   55  more ~/.ssh
+   56  less ~/.ssh
+   57  ls -l ~/.ssh
+   58  man sshd
+   59  sudo vi /etc/ssh/sshd_config 
+   60  exit
+   61  ls -l
+   62  ls -la
+   63  cd .ssh
+   64  ls
+   65  ls -la
+   66  more authorized_keys 
+   67  exit
+   68  chmod 775 .ssh
+   69  cd .ssh
+   70  chmod 664 authorized_keys 
+   71  ls -l
+   72  cd ..
+   73  ls
+   74  ls -a
+   75  ls -la
+   76  sudo reboot
+   77  ls -l
+   78  ls -la
+   79  chmod 700 .ssh
+   80  cd .ssh
+   81  ls -a
+   82  ls -la
+   83  chmod 600 authorized_keys 
+   84  ls -l
+   85  cd ..
+   86  cd /etc/sshd
+   87  cd /etc/ssh
+   88  ls
+   89  vim sshd_config 
+   90  netstat -panl
+   91  netstat -pnl
+   92  sudo aptitude install --without-recommends ubuntu-desktop
+   93  sudo apt-get install aptitude
+   94  sudo aptitude install --without-recommends ubuntu-desktop
+   95  /usr/lib/vino/vino-server
+   96  sudo apt-get install vino-server
+   97  sudo apt-get update
+   98  sudo apt-get install vino-server
+   99  sudo apt-search vino
+  100  sudo apt-cache search  vino
+  101  sudo apt-get install vino
+  102  /usr/lib/vino/vino-server
+  103  sudo apt-get install lxde
+  104  df
+  105  df -h
+  106  sudo apt-get install lxde
+  107  sudo netstat -pnl
+  108  sudo reboot
+  109  ls
+  110  netstat -pnl
+  111  startx
+  112  screen
+  113  ls
+  114  cd /etc
+  115  ls
+  116  sudo service lightdm start
+  117  sudo netstat -pnl
+  118  ps -e
+  119  sudo service lightdm status
+  120  sudo reboot
+  121  netstat -pnl
+  122  sudo netstat -pnl
+  123  history
+  124  /usr/lib/vino/vino-server
+  125  sudo service lightdm start
+  126  sudo service lightdm status
+  127  history
+  128  sudo apt-get install lxde
+  129  sudo apt-get install ubuntu-desktop
+  130  sudo /etc/init.d/lxdm start
+  131  sudo /etc/init.d/lxd status
+  132  sudo apt-get install lxdm
+  133  sudo reboot
+  134  passwd
+  135  netstat -pnl
+  136  sud onetstat -pnl
+  137  sudo netstat -pnl
+  138  history
+  139  sudo /etc/init.d/lxdm start
+  140  sudo /etc/init.d/lxdm status
+  141  sudo netstat -pnl
+  142  history
+  143  /usr/lib/vino/vino-server
+  144  sudo /usr/lib/vino/vino-server
+  145  ps -e
+  146  sudo reboot
+  147  ls
+  148  ps -e
+  149  history
+  150  sudo apt-get remove ubuntu-desktop
+  151  sudo reboot
+  152  ps -e
+  153  cd /var/log
+  154  ls
+  155  tail -f Xorg.0.log
+  156  less Xorg.0.log
+  157  ls
+  158  less Xorg.failsafe.log
+  159  sudo apt-get install xrdp
+  160  cd
+  161  mkdir .xsession
+  162  ls -l
+  163  sudo apt-get install lxde-core
+  164  sudo apt-get install task-lxde-desktop
+  165  ls -a
+  166  rmdir .xsession
+  167  touch .xsession
+  168  vi .xsession 
+  169  sudo reboot
+  170  netstat -pnl
+  171  sudo netstat -pnl
+  172  exit
+  173  screen
+  174  screen -r
+  175  screen
+  176  ls
+  177  wget https://az412801.vo.msecnd.net/vhd/VMBuild_20141027/VirtualBox/IE11/Windows/IE11.Win7.For.Windows.VirtualBox.zip
+  178  ls
+  179  uname -a
+  180  cd Downloads/
+  181  ls
+  182  debsudo apt-get install virtualbox 
+  183  sudo apt-get install virtualbox 
+  184  sudo apt install virtualbox-ext-pack
+  185  top
+  186  cd /etc/apt
+  187  ls
+  188  more sources.list
+  189  cd
+  190  cd Downloads/
+  191  ls
+  192  sudo deb install virtualbox-5.2_5.2.0-118431~Ubuntu~xenial_amd64.deb 
+  193  dpkg -i virtualbox-5.2_5.2.0-118431~Ubuntu~xenial_amd64.deb 
+  194  sudo dpkg -i virtualbox-5.2_5.2.0-118431~Ubuntu~xenial_amd64.deb 
+  195  sudo apt-get remove virtualbox
+  196  sudo dpkg -i virtualbox-5.2_5.2.0-118431~Ubuntu~xenial_amd64.deb 
+  197  sudo /sbin/vbovirtualbox 
+  198  sudo /sbin/vboxconfig
+  199  sudo reboot
+  200  virtualbox 
+  201  find / -iname vboxconfig
+  202  sudo find / -iname vboxconfig
+  203  history
+  204  sudo virtualbox 
+  205  sudo /usr/lib/virtualbox/vboxdrv.sh setup
+  206  virtualbox 
+  207  sudo virtualbox 
+  208  sudo dpkg -i /home/ics355_sa/Downloads/virtualbox-5.2_5.2.0-118431~Ubuntu~xenial_amd64.deb 
+  209  sudo apt-get install libcurl3
+  210  sudo dpkg -i /home/ics355_sa/Downloads/virtualbox-5.2_5.2.0-118431~Ubuntu~xenial_amd64.deb 
+  211  virtualbox 
+  212  history
+  213  sudo /usr/lib/virtualbox/vboxdrv.sh setup
+  214  virtualbox 
+  215  sudo reboot
+  216  passwd
+  217  ls
+  218  history
+  219  sudo apt-get -y install gcc ocaml libdb-dev gnupg nginx wget
+  220  gpg --keyserver hkp://pool.sks-keyservers.net --trust-model always --recv-key 0x0B7F8B60E3EDFAE3
+  221  wget https://bitbucket.org/skskeyserver/sks-keyserver/downloads/sks-1.1.6.tgz
+  222  wget  https://bitbucket.org/skskeyserver/sks-keyserver/downloads/sks-1.1.6.tgz.asc
+  223  gpg --keyid-format long --verify sks-1.1.6.tgz.asc
+  224  wget  https://bitbucket.org/skskeyserver/sks-keyserver/downloads/sks-1.1.6.tgz.asc
+  225  gpg --keyid-format long --verify sks-1.1.6.tgz.asc
+  226  ls
+  227  gpg --keyid-format long --verify sks-1.1.6.tgz.asc
+  228  more sks-1.1.6.tgz.asc
+  229  wget https://bitbucket.org/skskeyserver/sks-keyserver/downloads/sks-1.1.6.tgz
+  230  more sks-1.1.6.tgz.asc.1
+  231  gpg --keyid-format long --verify sks-1.1.6.tgz.asc.1 
+  232  ls
+  233  diff sks-1.1.6.tgz.1
+  234  diff sks-1.1.6.tgz.1 sks-1.1.6.tgz
+  235  rm sks-1.1.6.tgz.1
+  236  diff sks-1.1.6.tgz.asc.1 sks-1.1.6.tgz.asc
+  237  rm sks-1.1.6.tgz.asc
+  238  gpg --keyid-format long --verify sks-1.1.6.tgz.asc
+  239  ls -l
+  240  gpg --keyid-format long --verify sks-1.1.6.tgz.asc
+  241  gpg --keyid-format long --verify sks-1.1.6.tgz.asc.1 
+  242  mv sks-1.1.6.tgz.asc.1 sks-1.1.6.tgz.asc
+  243  gpg --keyid-format long --verify sks-1.1.6.tgz.asc
+  244  tar -xzf sks-1.1.6.tgz
+  245  cd sks-1.1.6
+  246  cp Makefile.local.unused Makefile.local
+  247  sed -i 's/ldb\-4.6/ldb\-5.3/' Makefile.local
+  248  make dep
+  249  make all
+  250  sudo apt-get zlib-dev
+  251  sudo apt-get install zlib-dev
+  252  sudo apt-cache search zlib
+  253  make dep
+  254  make all
+  255  sudo apt-get install zlib
+  256  sudo find / -9name zlib
+  257  sudo find / -iname zlib
+  258  sudo find / -iname zlib.h
+  259  sudo apt-get install libz-dev
+  260  make all
+  261  sudo make install
+  262  mkdir  /var/lib/sks
+  263  sudo mkdir  /var/lib/sks
+  264  vi /var/lib/sks/sksconf
+  265  sudo vi /var/lib/sks/sksconf
+  266  sudo -s
+  267  mkdir -p /var/lib/sks/dump
+  268  cd /var/lib/sks/dump
+  269  wget -crp -e robots=off --level=1 --cut-dirs=3 -nH -A pgp,txt https://keyserver.mattrude.com/dump/current/
+  270  screen
+  271  screen -r
+  272  ls
+  273  ls -l
+  274  cd /var/lib/sks
+  275  ls
+  276  cd dump/
+  277  l
+  278  ls
+  279  ls -l
+  280  ls -lh
+  281  screen
+  282  ls
+  283  cd /etc/nginx/
+  284  ls
+  285  netstat -panl
+  286  netstat -pnl
+  287  ifconfig
+  288  netstat -pnl
+  289  ifconfig 
+  290  netstat -pnl
+  291  sudo service nginx restart
+  292  ls
+  293  vi /etc/nginx/nginx.conf
+  294  sudo vi /etc/nginx/nginx.conf
+  295  sudo service nginx restart
+  296  netstat -pnl
+  297  cd /var/www/html/
+  298  ls
+  299  vi index.
+  300  vi index.html
+  301  sudo service sks restart
+  302  cd /etc/init.d/
+  303  sudo vi /etc/init.d
+  304  sudo vi /etc/init.d/sks
+  305  cd /etc/init.d
+  306  ls -l
+  307  sudo chmod 755 sks
+  308  sudo ./sks start
+  309  cd /var/lib/sks
+  310  ls
+  311  sudo /usr/local/bin/sks_build.sh
+  312  sudo mkdir /usr/sbin/sks
+  313  sudo /usr/local/bin/sks_build.sh
+  314  sudo rmdir /usr/sbin/sks
+  315  sudo vi /etc/nginx/nginx.conf
+  316  vi /var/www/html/index.html 
+  317  cd
+  318  ls
+  319  cd sks-1.1.6
+  320  sudo make install
+  321  /usr/local/bin/sks
+  322  cd /var/lib/sks
+  323  sudo /usr/local/bin/sks_build.sh
+  324  man ln
+  325  ln -s /usr/local/bin/sks /usr/sbin/sks
+  326  sudo ln -s /usr/local/bin/sks /usr/sbin/sks
+  327  sudo /usr/local/bin/sks_build.sh
+  328  service nginx restart
+  329  sudo service nginx restart
+  330  sudo /etc/init.d/sks start
+  331  ls
+  332  cd /etc
+  333  ls
+  334  cd nginx/
+  335  ls
+  336  cd /var/html/www
+  337  cd /var/www
+  338  ls
+  339  cd html
+  340  ls
+  341  nano index.html
+  342  ls
+  343  sks
+  344  sks drop BE35 6CC5 9CE2 CC9D 5B3B  6772 7978 F9E2 8F67 8737
+  345  sks drop 0x7978f9e28f678737
+  346  sks drop 0064BC79B476B34646AF04ECE0D4B629
+  347  sudo sks drop 0064BC79B476B34646AF04ECE0D4B629
+  348  sks drop 
+  349  sks drop 0064BC79B476B34646AF04ECE0D4B629
+  350  sks --help
+  351  sks drop
+  352  sks drop 0064BC79B476B34646AF04ECE0D4B629
+  353  sks drop '0064BC79B476B34646AF04ECE0D4B629'
+  354  sks drop "0064BC79B476B34646AF04ECE0D4B629"
+  355  sks drop 0064bc79b476b34646af04ece0d4b629
+  356  sks drop ``0064bc79b476b34646af04ece0d4b629''
+  357  sks drop 0064bc79b476b34646af04ece0d4b629
+  358  sks -help
+  359  sks db
+  360  sks version
+  361  ls
+  362  cat db.log 
+  363  sks db
+  364  quit
+  365  exit
+  366  ls
+  367  cat db.log 
+  368  sks start
+  369  sks
+  370  cd /etc/init.d/
+  371  ls
+  372  ./sks start
+  373  sudo ./sks start
+  374  sudo ./sks stop
+  375  sudo ./sks start
+  376  sks drop 0064bc79b476b34646af04ece0d4b629
+  377  ./sks restart
+  378  sudo ./sks restart
+  379  sks drop 0064bc79b476b34646af04ece0d4b629
+  380  cd ..
+  381  ls
+  382  cd ..
+  383  ls
+  384  cd usr/
+  385  ls
+  386  cd ..
+  387  ls
+  388  cd home/
+  389  ls
+  390  cd ics355_sa/
+  391  ls
+  392  cat db.log 
+  393  exit
+  394  ls
+  395  cat db
+  396  cat db.log
+  397  cd /etc/init.d/
+  398  ls
+  399  sudo ./sks start
+  400  gpg --edit-key 0x7978f9e28f678737
+  401  gpg --edit-key 
+  402  gpg --delete-key 0064BC79B476B34646AF04ECE0D4B629
+  403  gpg --delete-key BE35 6CC5 9CE2 CC9D 5B3B  6772 7978 F9E2 8F67 8737 
+  404  gpg --delete-key 0x7978f9e28f678737
+  405  sks drop
+  406  sks drop 0064BC79B476B34646AF04ECE0D4B629
+  407  cd /var/www/html
+  408  ls
+  409  pwd
+  410  ls
+  411  mv WebOfTrustModelScaled.html /var/www/html
+  412  sudo mv WebOfTrustModelScaled.html /var/www/html/
+  413  sudo mv d3/ /var/www/html/
+  414  ls
+  415  cd /var/www/html/
+  416  ls
+  417  nano index.html
+  418  sudo nano index.html
+  419  ls
+  420  sudo nano index.html
+  421  sudo nano WebOfTrustModelScaled.html
+  422  exit
+  423  cd /var/www/html/
+  424  ls
+  425  sudo nano WebOfTrustModelScaled.html 
+  426  exit
+  427  ls
+  428  mv WebOfTrustModelScaled2.html /var/www/html/
+  429  sudo mv WebOfTrustModelScaled2.html /var/www/html/
+  430  ls
+  431  cd /var/www/html/
+  432  ls
+  433  sudo nano index.html
+  434  fg
+  435  sudo nano index.html
+  436  sudo nano WebOfTrustModelScaled2.html 
+  437  sudo nano index.html
+  438  sudo nano WebOfTrustModelScaled.html 
+  439  sudo nano WebOfTrustModelScaled2.html 
+  440  ls
+  441  history
+  442  cd /var/www/html/
+  443  ls
+  444  exit
+  445* ls 
+  446* 
+  447  history > server_setup_history_num.txt
